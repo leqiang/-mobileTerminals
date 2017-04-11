@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 100px;
+				height: 100px;
+				background: blueviolet;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/transform.js">
+		
+	</script>
+	<script type="text/javascript">
+		/*
+		 定义一个读写2d变换的函数 css
+		 三个函数：写
+		 两个函数：读
+		 
+		 1.使用css样式实现
+		 	transform: translateX(100px) scale(.5);
+		 
+		 2.封装一个函数css
+		 
+		 		rotate(360deg)
+		 * 		skew(45deg)
+		 * 		skewX(45deg)
+		 * 		skewY(45deg)
+		 * 
+		 * 		scale(2)
+		 * 		scaleX(2)
+		 * 		scaleY(2)
+		 * 
+		 * 		translate(100px)
+		 * 		translateX(100px)
+		 * 		translateY(100px)
+		 * 
+		 * 
+		 * css(test,'translateX',100)
+		 * css(test,'scale',2)
+		 * */
+	
+	
+		var test = document.getElementById('test');
+		
+		css(test,'translateX',100);
+		css(test,'scale',.5);
+		
+		console.log(css(test,'scale'));
+		
+		/*function css(node,name,value){
+			if(!node.transform){
+				node.transform = {};
+			};
+			
+			if (arguments.length > 2) {
+				//写
+				node.transform[name] = value;
+				var result = '';
+				for(var item in node.transform){
+					switch (item){
+						case 'rotate':
+						case 'skew':
+						case 'skewX':
+						case 'skewY':
+							result = item + '('+ node.transform[name] +'deg) ';
+							break;
+						case 'scale':
+						case 'scaleX':
+						case 'scaleY':
+							result = item + '('+ node.transform[name] +') ';
+							break;
+						case 'translate':
+						case 'translateX':
+						case 'translateY':
+							result = item + '('+ node.transform[name] +'px) ';
+							break;
+					}
+										
+				}
+				console.log(result);
+				node.style.transform = node.style.webkitTransform = result;
+				
+			} else{
+				//读
+				if(typeof node.transform[name] == 'undefined'){
+					
+					if (name == 'scale'|| name == 'scaleX'|| name == 'scaleY') {
+						value = 1;
+					} else{
+						value = 0;
+					}
+					
+				}else{
+					value = node.transform[name];
+				}
+				
+				return value;
+			}
+			
+			
+		}*/
+		
+		
+		
+	</script>
+</html>

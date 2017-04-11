@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<title></title>
+		<!--
+			UI 给你一张设计图    320px   
+			
+			320px变成屏幕宽度
+			
+			图片 会失真
+			
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var targetW = 320;
+		
+		var width = document.documentElement.clientWidth;	
+		
+		var scale = width/targetW;	
+		
+		var metaNode = document.querySelector('meta[name = "viewport"]');
+		
+		metaNode.setAttribute('content','initial-scale='+scale);
+		
+		
+	</script>
+</html>

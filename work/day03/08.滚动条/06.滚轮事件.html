@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			ie/chrome : onmousewheel(dom0)
+				event.wheelDelta
+					上：120
+					下：-120
+				
+			firefox : DOMMouseScroll 必须用(dom2的标准模式)
+				event.detail
+					上：-3
+					下：3
+					
+			return false阻止的是  dom0 所触发的默认行为
+			dom2 需要通过event下面的event.preventDefault();
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body style="height: 3000px;">
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		
+		//ie/chrome 
+		box.onmousewheel = fn;
+
+		//firefox
+		if(box.addEventListener){
+			box.addEventListener('DOMMouseScroll',fn);
+		};
+		
+		
+		function fn(ev){
+			var ev = ev || event;
+			var flag = '';
+			var add = 10;
+			if(ev.wheelDelta){
+				//ie/chrome 
+//				console.log(ev.wheelDelta);
+				if(ev.wheelDelta > 0){
+					//向上
+					flag = 'up';
+					add = -10;
+					//box.style.height = box.offsetHeight - 10 +'px';
+				}else{
+					//向下
+					flag = 'down';
+					add = 10;
+					//box.style.height = box.offsetHeight + 10 +'px';
+				};
+							
+			}else if(ev.detail){
+				//firefox
+				//console.log(ev.detail);
+				if(ev.detail > 0){
+					//向下
+					flag = 'down';
+					add = 10;
+					//box.style.height = box.offsetHeight + 10 +'px';
+				}else{
+					//向上
+					flag = 'up';
+					add = -10;
+					//box.style.height = box.offsetHeight - 10 +'px';
+				};
+			};
+			
+			switch (flag){
+				case 'up':
+					box.style.height = box.offsetHeight +add +'px';
+					break;
+				case 'down':
+					box.style.height = box.offsetHeight + add +'px';
+					break;
+			}
+									
+			ev.preventDefault && ev.preventDefault();
+			return false;
+		};
+		
+		
+		
+		
+		
+	</script>
+</html>

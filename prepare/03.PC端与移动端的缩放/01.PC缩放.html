@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+			#left{
+				float: left;
+				}
+			#right{
+				float: right;
+				}
+		</style>
+	</head>
+	<body>
+		<!--
+			在PC端进行缩放
+				div面积会变大（具体大小不变），布局视口变小
+				布局发生变化，出现重排重绘
+			
+			通过控制台发现，初始包含块变小，布局视口变小
+			
+			检测移动端是否发生变化
+		-->
+		<div id="left">
+			           
+		</div>         
+		<div id="right">
+			
+		</div>
+	</body>
+</html>

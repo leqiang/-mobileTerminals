@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!--
+        标题组件：
+            负责显示整个图表的标题，在title中设置
+            show:标题是否显示
+            text：标题文字
+            subtext：子标题
+            left，top,right,bottom标题的位置
+            borderColor边框颜色
+            borderWidth边框宽度
+    -->
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    </body>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例echarts.init()
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            //标题组件
+            title: {
+                show:true,
+                text: 'ECharts 入门示例',
+                //subtext副标题
+                subtext:'学习ECharts就来尚硅谷',
+                left:80,  //数字就是像素值，也可以是center  left   right  这种值
+                borderColor:'red',
+                borderWidth:3
+
+            },
+            //组件的工具栏
+            tooltip: {},
+            //图例
+            legend: {
+                data:['H5课程']
+            },
+            //X轴
+            xAxis: {
+                data: ["HTML","JS","HTML5","Node","js高级","移动端"]
+            },
+            //Y轴
+            yAxis: {},
+            //数据
+            series: [{
+                name: 'H5课程',
+                //直方图类型  bar
+                type: 'bar',
+                data: [10, 20, 36, 10, 15, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+</html>

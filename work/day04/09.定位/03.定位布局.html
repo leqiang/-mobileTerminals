@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>	
+		<!--
+			1.正常布局
+			2.正常样式
+			3.定位实现左右位置
+			4.内容区文字未显示
+			5.设置最小宽度
+			
+			中间内容区看不见，滚动条后边出现padding部分
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				min-width: 600px;
+			}
+			#left,#right{
+				width: 200px;
+				height: 100px;
+				background: yellow;
+			}
+			#middle{
+				height: 200px;
+				background: yellowgreen;
+				padding: 0 200px;
+			}
+			#left{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#right{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			left
+		</div>	
+		<div id="middle">
+			middle
+		</div>
+		<div id="right">
+			right
+		</div>
+		
+		
+	</body>
+</html>

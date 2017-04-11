@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<!--
+			1px指的是1物理像素
+			1px css像素 占据 2px 物理像素
+			也就就 1物理像素等于0.5css像素
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*#test{
+				width: 100px;
+				height: 100px;
+				border: 1px solid;
+			}*/
+			#test{
+				width: 100px;
+				height: 100px;
+				/*0.5px  浏览器不支持*/
+				border: 0.5px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+</html>

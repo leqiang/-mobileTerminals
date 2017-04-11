@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试" />
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		
+		//dom0 		只输出dom0_3		发生覆盖操作
+		btn.onclick = function(){
+			console.log('dom0_1');
+		};
+		btn.onclick = function(){
+			console.log('dom0_2');
+		};
+		btn.onclick = function(){
+			console.log('dom0_3');
+		};
+		
+		//dom2		输出dom2_1，dom2_2，dom2_3    未发生覆盖操作
+		btn.addEventListener('click',function(){
+			console.log('dom2_1');
+		});
+		btn.addEventListener('click',function(){
+			console.log('dom2_2');
+		});
+		btn.addEventListener('click',function(){
+			console.log('dom2_3');
+		});
+		
+		
+	</script>
+</html>

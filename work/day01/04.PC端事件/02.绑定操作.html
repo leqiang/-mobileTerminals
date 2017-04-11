@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试" /><!--onclick="fun()"-->
+	</body>
+	<!--
+		耦合函数
+		
+		this   window
+	-->
+	<script type="text/javascript">
+//		function fun(){
+//			console.log(this);//window
+//		}
+
+	var btn = document.getElementById('btn');
+	
+//	btn.onclick = function(){
+//		console.log(this);//input
+//	}
+
+	btn.addEventListener('click',function(){
+		console.log(this);//input
+	});
+	
+	
+	</script>
+</html>

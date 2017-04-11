@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<!--头部-->
+			<!--
+				使用绝对定位模拟固定定位
+				原因：大部分安卓机子的浏览器不支持固定定位
+					（ie6不支持固定定位）
+			-->
+			<header id="head">
+				<!--上半部分-->
+				<div id="headerT">
+					<h1 id="logo">
+						<img src="img/logo.png"/>
+					</h1>
+					<a href="javascript:;" id="menuBtn" class="menuBtnClos"></a>
+					<div id="nav">
+						<a href="javascript:;" id="searchBtn">搜索</a>
+						<a href="javascript:;">登录</a>
+						<a href="javascript:;">注册</a>
+					</div>										
+				</div>
+				<!--
+					下半部分
+				-->
+				<form id="search">
+					<input type="text" placeholder="请输入搜索内容"/>
+					<input type="submit" value="搜索"/>
+				</form>											
+				<!--
+					遮罩
+				-->
+				<div id="mask">
+					<ul id="mask_list" style="display: block;">
+						<li>
+							<a href="javascript:void(0)">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">MV</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">悦单</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">V榜</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">音悦</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">商城</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+					</ul>
+				</div>				
+			</header>																
+			<!--内容-->
+			<section id="container">
+				<!--可拖拽的导航-->
+				<div id="navWrap">
+					<ul id="navs">
+						<li>
+							<a href="javascript:void(0)" class="active">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">MV</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">小黑</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">V榜</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">音悦</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">商城</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王波</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王波团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">赵伟</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">马超</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王小焕</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王皮</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+					</ul>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</section>
+			
+			
+			<!--底部-->
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/transform.js"></script>
+	<script type="text/javascript">
+		//取消默认行为
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		//rem适配		
+		(function(){
+			var width = document.documentElement.clientWidth;
+			var styleNode = document.createElement('style');
+			styleNode.innerHTML = 'html{font-size: ' + width/16 + 'px !important;}';
+			document.head.appendChild(styleNode);
+		})();
+		
+		//点击颜色切换
+		changeColor();
+		
+		function changeColor(){
+			var navs = document.getElementById('navs');
+			var liNodes = document.querySelectorAll('#navs li a');
+			
+			
+			for (var i=0;i<liNodes.length;i++) {
+				//误触
+				liNodes[i].addEventListener('touchmove',function(){
+					if(!this.isMove){
+						this.isMove = true;
+					};									
+				});
+				
+				liNodes[i].addEventListener('touchend',function(ev){
+					if(!this.isMove){
+						for (var j=0;j<liNodes.length;j++) {
+							liNodes[j].className = '';
+						}
+						this.className = 'active';	
+					};
+					this.isMove = false;
+				});								
+			};
+				
+			//event.target	
+//			navs.addEventListener('touchmove',function(){
+//				if(!this.isMove){
+//					this.isMove = true;
+//				};
+//			})
+//			navs.addEventListener('touchend',function(ev){
+//				var touch = ev.changedTouches[0];
+//				if(!this.isMove){
+//					
+//					for (var i=0;i<liNodes.length;i++) {
+//						liNodes[i].className = '';
+//					};
+//										
+//					if(touch.target.nodeName.toUpperCase() == 'A'){
+//						touch.target.parentNode.className = 'active';
+//					}else if(touch.target.nodeName.toUpperCase() == 'LI'){
+//						touch.target.className = 'active';
+//					};										
+//				};
+//				
+//				this.isMove = false;
+//				
+//			});
+						
+						
+						
+//方法一：						
+			//给每一个li绑定监听事件
+//			for (var i=0;i<liNodes.length;i++) {
+//				//误触
+//				liNodes[i].addEventListener('touchmove',function(){
+//					if(!this.isMove){
+//						this.isMove = true;
+//					};									
+//				});
+//				
+//				liNodes[i].addEventListener('touchend',function(ev){
+//					if(!this.isMove){
+//						for (var j=0;j<liNodes.length;j++) {
+//							liNodes[j].className = '';
+//						}
+//						this.className = 'active';	
+//					};
+//					this.isMove = false;
+//				});								
+//			};
+			
+			
+			
+		};
+		
+		
+		//可拖拽的导航
+		navDrag();
+		function navDrag(){
+			var navWrap = document.getElementById('navWrap');
+			var navs_ul = document.getElementById('navs');
+			
+			//简单的拖拽
+			var startX = 0;
+			var eleX = 0;
+			var minX = document.documentElement.clientWidth-navs_ul.offsetWidth;
+			
+			//定义时间和位移
+			var beginTime = 0;
+			var beginX = 0;
+			var endTime = 0;
+			var endX = 0;
+			
+//			var disTime = 1;
+			var disVal = 0;
+			
+			navWrap.addEventListener('touchstart',function(ev){
+				var touch = ev.changedTouches[0];	
+				
+				//清除过渡
+				navs_ul.style.transition = 'none';
+				
+				startX = touch.clientX;
+				eleX = transformCss(navs_ul,'translateX');
+				
+				//开始的速度和时间
+				//毫秒				
+				beginTime = new Date().getTime();
+				beginX = startX;
+				
+				//bug
+//				disTime = 1;
+				disVal = 0;
+				
+			});
+			navWrap.addEventListener('touchmove',function(ev){
+				var touch = ev.changedTouches[0];
+				var nowX = touch.clientX;
+				
+				var disX = nowX - startX;
+				//范围的限定
+				var translateX = disX+eleX;
+				
+				
+				//scale  1 --->    0
+				
+				//拖拽中拖的过程
+				var scale = 0;				
+				if(translateX>0){
+					//translateX = 0;
+					scale = 1- translateX / document.documentElement.clientWidth;
+					
+					translateX = translateX * scale;
+				}else if(translateX<minX){
+					//translateX=document.documentElement.clientWidth-navs_ul.offsetWidth;
+					//留白
+					var over = minX - translateX;				 					 	
+				 	scale = 1 - over / document.documentElement.clientWidth;
+										
+					translateX = minX - (over * scale);
+					
+				}
+				
+				transformCss(navs_ul,'translateX',translateX);
+				
+				//最后的速度和时间
+				endTime = new Date().getTime();
+				endX = nowX;
+				
+				disTime = endTime - beginTime;
+				disVal = endX - beginX;
+				
+				
+			});	
+			
+			//快速滑屏和回弹效果
+			navWrap.addEventListener('touchend',function(ev){
+				//快速滑屏的速度
+				//var speed = disVal/disTime;
+				var speed = disVal/(endTime - beginTime);
+				console.log(speed);
+				var target = transformCss(navs_ul,'translateX') + speed*80;
+				
+				//速度越快speed值增大，回弹越快，相对时间减小
+				var time = Math.abs(speed)*0.3;
+				time = time > 0.3?0.3 : time;
+				
+				//限定范围
+				//cubic-bezier(0,1.57,.41,1.73) 
+				var bezier = '';
+				if(target>0){
+					target = 0;
+					bezier = 'cubic-bezier(0,1.57,.41,1.73)';
+				}else if(target < minX){
+					target = minX;
+					bezier = 'cubic-bezier(0,1.57,.41,1.73)'
+				};
+				
+				navs_ul.style.transition = time + 's ' + bezier;
+				transformCss(navs_ul,'translateX',target);
+			});
+			
+		};
+		
+		
+		
+		
+		
+		
+		
+		//切换焦点
+		changeFocus();
+		function changeFocus(){
+			var inputNode = document.querySelector('#search input[type="text"]');
+			
+			inputNode.addEventListener('touchstart',function(ev){
+				//获取焦点
+				this.focus();
+				ev.stopPropagation();
+			});
+			
+			//PC端的事件，在移动端回去300ms延迟问题（点透事件）
+//			inputNode.addEventListener('blur',function(){
+//				//this.blur();
+//				//console.log(123);
+//				//this.style.bgColor = '#999';
+//				this.style.background = '#999';
+//			});
+
+			document.addEventListener('touchstart',function(){
+				inputNode.blur();				
+			});
+		};
+		
+		//切换菜单
+		changeMenu();
+		function changeMenu(){
+			var menuBtn = document.getElementById('menuBtn');
+			var mask = document.getElementById('mask');
+			
+			menuBtn.addEventListener('touchstart',function(ev){
+				if(this.className == 'menuBtnClos'){
+					this.className = 'menuBtnOpen';
+					mask.style.display = 'block';
+				}else if(this.className == 'menuBtnOpen'){
+					this.className = 'menuBtnClos';
+					mask.style.display = 'none';
+				};
+				
+				ev.stopPropagation();
+				
+			});
+			document.addEventListener('touchstart',function(){
+				 if(menuBtn.className == 'menuBtnOpen'){
+					menuBtn.className = 'menuBtnClos';
+					mask.style.display = 'none';
+				};				
+			});
+			mask.addEventListener('touchstart',function(ev){
+				ev.stopPropagation();
+			});			
+		};
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<!--
+    工具箱组件：toolbox
+        负责组件的工具栏
+        feature:具体显示的功能
+	        saveAslmage：保存图片
+	        restore：还原
+	        dataView:数据视图
+	        dataZoom:缩放视图
+	        magicType:动态数据切换
+-->
+
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例echarts.init()
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        //标题组件
+        title: {
+            show:true,
+            text: 'ECharts 入门示例',
+            //subtext副标题
+            subtext:'学习ECharts就来尚硅谷',
+            left:80,  //数字就是像素值，也可以是center  left   right  这种值
+            borderColor:'red',
+            borderWidth:5
+
+        },
+        //工具箱组件
+        toolbox: {
+            show:true,
+            //具体显示的功能
+            feature:{
+                //数据视图
+                dataView: {
+                    show:true
+                },
+                //还原
+               restore:{
+                    show:true
+                },
+                //缩放视图
+                dataZoom:{
+                    show:true
+                },
+                //保存图片
+                saveAsImage:{
+                    show:true
+                },
+                //动态数据切换
+                magicType:{
+                    type:['line','bar']
+                }
+            }
+        },
+        //图例
+        legend: {
+            data:['H5课程']
+        },
+        //X轴
+        xAxis: {
+            data: ["HTML","JS","HTML5","Node","js高级","移动端"]
+        },
+        //Y轴
+        yAxis: {},
+        //数据
+        series: [{
+            name: 'H5课程',
+            //直方图类型  bar
+            type: 'bar',
+            data: [10, 20, 36, 10, 15, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+</html>

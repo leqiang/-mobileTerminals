@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 300px;
+				height: 300px;
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			PC端：
+				event.clickX
+				event.clickY
+		-->
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var test = document.getElementById('test');
+		
+		test.addEventListener('click',function(event){
+			console.log(event);
+		})
+		
+		
+	</script>
+</html>

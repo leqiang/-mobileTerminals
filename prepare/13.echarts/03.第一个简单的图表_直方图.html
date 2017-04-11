@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 引入 ECharts 文件 -->
+    	<script src="js/echarts.js"></script>
+	</head>
+	<body>
+		<!--
+			步骤：
+				1.下载echarts，并引入
+				2.为 ECharts 准备一个具备高宽的 DOM 容器
+				3.以通过 echarts.init 方法初始化一个 echarts 实例
+				4.通过 setOption 方法生成一个简单的柱状图(type：bar)
+		-->
+		
+		<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    	<div id="main" style="width: 600px;height:400px;"></div>
+	</body>
+	 <script type="text/javascript">
+        // 基于准备好的dom，初始化 echarts 实例 echarts.init()
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+        	//标题
+            title: {
+                text: 'ECharts 入门示例'
+            },
+			//弹窗组件
+            tooltip: {},
+			//图例
+            legend: {
+                data:['H5课程']
+            },
+			//X轴
+            xAxis: {
+                data: ["HTML","JS","HTML5","Node","js高级","移动端"]
+            },
+			//Y轴
+            yAxis: {},
+			//数据
+            series: [{
+                name: 'H5课程',
+				//直方图类型  bar
+                type: 'bar',
+                data: [10, 20, 36, 10, 15, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 250px;
+				height: 250px;
+				background: blue;
+				opacity: 0.5;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">点我</a>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+	
+		var test = document.getElementById('test');
+		
+		test.addEventListener('touchstart',function(){
+			
+			test.style.display = 'none';
+		})
+
+//		test.addEventListener('click',function(){
+//			
+//			test.style.display = 'none';
+//		})
+
+
+/*
+ 	click:PC端的事件，在移动端有300ms延迟 	
+ * touchstart：手指已出发的那一刻，遮罩立即消失，300ms以后click事件发生
+ * 
+ * 
+ * */
+		
+		
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="main" style="width: 1000px;height: 500px;">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/echarts.js"></script>
+	<script type="text/javascript">
+		//初始化实例
+		var myChart = echarts.init(document.getElementById('main'));
+		
+		//配置项数据
+		var option = {
+			    tooltip : {
+			        formatter: "{a} <br/>{b} : {c}%"
+			    },
+			    toolbox: {
+			        feature: {
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    series: [
+			        {
+			            name: '业务指标',
+			            type: 'gauge',
+			            detail: {formatter:'{value}%'},
+			            data: [{value: 50, name: '完成率'}]
+			        }
+			    ]
+			};
+			
+			setInterval(function () {
+			    option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+			    myChart.setOption(option, true);
+			},2000);
+					
+		//把数据图表呈现出来
+		myChart.setOption(option);
+	</script>
+</html>

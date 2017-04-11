@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 引入 ECharts 文件 -->
+		<script src="js/echarts.js"></script>
+	</head>
+	<body>
+		<!--
+			饼图主要是通过扇形的弧度表现不同类目的数据在总和中的占比
+			它的数据格式比柱状图更简单，只有一维的数值，不需要给类目。
+			因为不在直角坐标系上，所以也不需要xAxis，yAxis。
+		-->
+		<!--
+			饼图展示数据的特点
+				-展示百分比
+				-type是pie
+			radius半径
+			name图例的名字
+		-->
+
+		<!--
+			个性化设置：
+				南丁格尔图
+				阴影的配置itemStyle
+			   	 扇形的颜色 itemStyle
+				文本样式textStyle
+				背景主题backgroundColor
+				将数值的大小映射到明暗度,通过 visualMap 组件
+		-->
+
+		<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    	<div id="main" style="width: 600px;height:600px;"></div>
+	
+	</body>
+	<script type="text/javascript">
+		 // 基于准备好的dom，初始化echarts实例echarts.init()
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+			    series : [
+			        {
+			            name: '粉丝率',
+			            type: 'pie',
+			            //radius在整个容器中所占的大小			      
+			            radius: '55%',
+			            //南丁格尔图
+			            roseType: 'angle',
+			            data:[
+			                {value:400, name:'晓飞老师'},
+			                {value:335, name:'立超老师'},
+			                {value:310, name:'白老师'},
+			                {value:274, name:'许老师'},
+			                {value:235, name:'龙哥哥'}
+			            ],
+			            //阴影的配置itemStyle
+			            //扇形的颜色 itemStyle
+			            itemStyle: {
+			            //阴影设置 normal和emphasis两种方式
+			            	//正常样式
+						   /* normal: {
+						        // 阴影的大小
+						        shadowBlur: 200,
+						        // 阴影水平方向上的偏移
+						        shadowOffsetX: 0,
+						        // 阴影垂直方向上的偏移
+						        shadowOffsetY: 0,
+						        // 阴影颜色
+						        shadowColor: 'rgba(0, 0, 0, 0.5)'
+						    }
+						   
+						   	//鼠标移入，饼图的样式
+						    emphasis: {
+						        shadowBlur: 200,
+						        shadowColor: 'rgba(0, 0, 0, 0.5)'
+						    },*/
+						    
+						//扇形的颜色 normal和emphasis两种方式
+							normal: {
+						        // 设置扇形的颜色
+						        color: '#c23531',
+						        shadowBlur: 200,
+						        shadowColor: 'rgba(0, 0, 0, 0.5)'
+						    }
+						
+						},
+						//文本样式也可以设置在系列里面normal和emphasis两种方式
+						label: {
+						    normal: {
+						        textStyle: {
+						            color: 'rgba(255, 255, 255, 0.5)'
+						        }
+						    }
+						},
+						//设置引导线的颜色normal和emphasis两种方式
+						labelLine: {
+						    normal: {
+						        lineStyle: {
+						            color: 'rgba(255, 255, 255, 0.5)'
+						        }
+						    }
+						}
+			            
+			        }			        
+			    ],
+			    //背景主题：背景色是全局的，所以直接在 option 下设置 backgroundColor
+			    backgroundColor: '#2c343c',
+			    
+			    //文本样式，可以设置全局
+			   /* textStyle: {
+			        color: 'rgba(255, 255, 255, 0.5)'
+			    }*/
+			   
+			    //将数值的大小映射到明暗度,通过 visualMap 组件
+			   visualMap: {
+				// 不显示 visualMap 组件，只用于明暗度的映射
+				show: false,
+				// 映射的最小值为 80
+				min: 80,
+				// 映射的最大值为 600
+				max: 600,
+				inRange: {
+					// 明暗度的范围是 0 到 1
+					colorLightness: [0, 1]
+				}
+			}
+
+		};
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+	</script>
+</html>

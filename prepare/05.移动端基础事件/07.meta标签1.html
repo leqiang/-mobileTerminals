@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 800px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			testtesttesttesttesttest
+		</div>
+		<!--
+			width=device-width：
+				width: 375px;  在iphone6中完整显示
+				width: 370px;  出现一个空白  ，正常
+				width: 800px;  没有横向滚动条，重新打开页面，文字被压缩
+								添加initial-scale=1.0
+								出现横向滚动条
+							
+			width=device-width,initial-scale=1.0不同浏览器处理方式不一样，以防万一，都需要写出来				
+		-->
+	</body>
+</html>

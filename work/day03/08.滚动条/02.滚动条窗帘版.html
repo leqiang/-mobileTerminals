@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 40px;
+				/*height: 100%;*/
+				background: gray;
+			}
+			#inner{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 40px;
+				height: 60px;
+				background: greenyellow;
+			}
+			#content{
+				width: 100%;
+				height: 10px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			
+		</div>
+		<!--
+			滑槽
+		-->
+		<div id="wrap">
+			<!--
+				滑块
+			-->
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		var content = document.getElementById('content');
+		
+		//造文本
+//		var text = '';
+//		for (var i=0;i<300;i++) {
+//			text += i + '<br/>';
+//		}
+//		content.innerHTML = text;
+		
+		var startY = 0;
+		var elementY = 0;
+				
+		inner.onmousedown = function(ev){
+			var ev = ev || event;
+			
+			startY = ev.clientY;
+			elementY = inner.offsetTop;
+			
+			inner.setCapture && inner.setCapture();
+			document.onmousemove = function(ev){
+				var ev = ev || event;
+				
+				var nowY = ev.clientY;
+				
+				var top = nowY - startY + elementY;
+				
+				if(top < 0){
+					top = 0;
+				}else if(top > document.documentElement.clientHeight - inner.offsetHeight){
+					top = document.documentElement.clientHeight - inner.offsetHeight;
+				};
+				
+				inner.style.top = top + 'px';
+				
+				var scale = top / (document.documentElement.clientHeight-inner.offsetHeight);
+				
+				content.style.height = document.documentElement.clientHeight * scale + 'px';
+				//content.style.height = top + 'px';
+				
+			};
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				document.releaseCapture && document.releaseCapture();
+			};
+			return false;
+		};
+		
+		
+		
+	</script>
+</html>

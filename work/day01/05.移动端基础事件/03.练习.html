@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			禁止wrap中的系统弹窗
+			inner可以正常使用
+		-->
+		<div id="wrap">
+			wrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrap
+			<div id="inner">
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		
+		wrap.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		inner.addEventListener('touchstart',function(ev){
+			//取消冒泡
+			//ev.stopPropagation();
+			
+			ev.cancelBubble = true;
+			
+		})
+		
+	</script>
+</html>

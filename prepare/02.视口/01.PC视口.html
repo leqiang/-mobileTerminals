@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 3000px;">
+	</body>
+	<script type="text/javascript">
+		//最干净的视口
+		var width = document.documentElement.clientWidth;//视口
+		console.log(width);
+		
+		//带滚动条占位的视口
+		width = window.innerWidth;
+		console.log(width);
+		
+		//窗口
+		width = window.outerWidth;
+		console.log(width);//(其实它比innerWidth要大)
+		
+		//屏幕
+		width = screen.width;
+		console.log(width);//(其实它比outerWidth要大)
+		
+	</script>
+</html>

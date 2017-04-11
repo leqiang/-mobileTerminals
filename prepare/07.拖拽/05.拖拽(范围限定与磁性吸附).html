@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				position: absolute;
+				width: 320px;
+				height: 244px;
+				background: url(img/a.png) no-repeat;
+			}
+			#others{
+				position: absolute;
+				left: 500px;
+				top:300px;
+				width: 200px;
+				height: 200px;
+				background: greenyellow;				
+				z-index: 100;
+			}
+		</style>
+	</head>
+	<body>	
+		<div id="test">
+			
+		</div>
+		<div id="others">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//获取元素
+		var test = document.querySelector('#test');
+		
+		//定义鼠标和元素位置
+		var startPoint = {left:0,top:0};
+		var elementPoint = {left:0,top:0};
+		
+		test.onmousedown = function(ev){
+			//处理兼容问题
+			var ev = ev || event;
+			startPoint.left = ev.clientX;
+			startPoint.top = ev.clientY;
+			
+			elementPoint.left = test.offsetLeft;
+			elementPoint.top = test.offsetTop;
+			
+			//开启全局捕获
+			if(test.setCapture){
+				test.setCapture();
+			};
+			
+			document.onmousemove = function(ev){
+				//处理兼容问题
+				var ev = ev || event;
+				
+				//鼠标现在的位置
+				var nowPoint = {left:0,top:0};
+				nowPoint.left = ev.clientX;
+				nowPoint.top = ev.clientY;
+				
+				var L = elementPoint.left + (nowPoint.left - startPoint.left);
+				var T = elementPoint.top + (nowPoint.top - startPoint.top);
+				
+				//限定范围与磁性吸附
+				if(L < 100){
+					L = 0;
+				}else if(L > document.documentElement.clientWidth-test.offsetWidth -100){
+					L = document.documentElement.clientWidth-test.offsetWidth;
+				};
+				if(T < 100){
+					T = 0;
+				}else if(T > document.documentElement.clientHeight - test.offsetWidth -100){
+					T = document.documentElement.clientHeight - test.offsetHeight;
+				}
+				
+				
+				//确定元素的位置
+				test.style.left = L + 'px';
+				test.style.top = T + 'px';
+				
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				
+				if(document.releaseCapture){
+					document.releaseCapture()
+				};
+			}
+			
+			//取消事件的默认行为,ie8一下不支持
+			return false;
+						
+		}
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

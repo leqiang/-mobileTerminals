@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var Tween = {
+			//默认样式
+			Linear: function(t,b,c,d){ return c*t/d + b; },
+			//超出
+			easeOut: function(t,b,c,d,s){
+	            if (s == undefined) s = 1.70158;
+	            return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	        	}			
+		};
+		
+//		Tween['Linear']();
+
+//		t:当前次数(一般从1开始)
+//		b:初始位置
+//		c:初始位置与最终位置的差值
+//		d：总次数
+//		s:回弹系数比例距离（s越大，回弹距离越远）
+
+//		返回值：每次运动需要达到的距离
+		
+		//需求：从0到100的距离，分10次完成
+		//var t = 0;
+		var b = 0;
+		var c = 100;
+		var d = 10;
+		var s = 2;
+//		Tween['Linear'](t,b,c,d);
+		
+		for (var i =0;i<d;i++) {
+			//console.log(Tween['Linear'](i+1,b,c,d));
+			console.log(Tween['easeOut'](i+1,b,c,d,s));
+		};
+		
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!--
+        标记线：markLine
+        标记点：markPoint
+            标记线的添加,在series中添加
+            最大值，平均值，最小值的标记线
+    -->
+
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例echarts.init()
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['H5课程']
+        },
+        xAxis: {
+            data: ["HTML","JS","HTML5","Node","js高级","移动端"]
+        },
+        yAxis: {},
+        series: [{
+            name: 'H5课程',
+            //折线图类型  line
+            type: 'line',
+            data: [10, 20, 36, 10, 15, 20],
+            markPoint:{
+                data:[
+                    {type:'max',name:'最大值'},
+                    {type:'min',name:'最小值'}
+                ]
+            },
+            markLine:{
+                data:[
+                    {type:'average',name:'平均值'}
+                ]
+            }
+
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>

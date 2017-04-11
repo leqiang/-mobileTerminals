@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1.布局（right和middle换位置）
+			2.开启浮动
+			
+			布局发生错乱，扩展性不好
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				min-width: 600px;
+			}
+			#left,#right{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+			}
+			#middle{
+				height: 100px;
+				background: yellowgreen;
+			}
+			#left{
+				float: left;
+			}
+			#right{
+				float: right;
+			}
+			
+			.clearfix{
+				*zoom: 1;
+			}
+			.clearfix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			#box{
+				width: 300px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body >
+		<div id="wrap" class="clearfix">
+			123
+			<div id="left">
+				left
+			</div>		
+			<div id="right">
+				right
+			</div>
+			<div id="middle">
+				middle
+			</div>		
+		</div>		
+	</body>
+</html>

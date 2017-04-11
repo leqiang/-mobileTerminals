@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1.ie6底下不认伪元素
+			2.ie6 7 底下开启haslayout
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				/*width: 400px;*/
+				border: 1px solid;
+				margin: 0 auto;							
+			}
+			#inner{
+				float: left;
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+			/*ie6 7 底下开启haslayout*/
+			.clearfix{
+				*zoom:1;
+			}
+			/*
+			 ie6底下不认伪元素
+			 * */
+			/*.clearfix:after{
+				content:'';
+				display: block;
+				clear: both;			
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="clearfix">
+			<div id="inner">
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

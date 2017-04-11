@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		node.onmousedown = function(){
+			
+			node.setCapture && node.setCapture();
+			document.onmousemove = function(){
+				
+			};
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				document.releaseCapture && document.releaseCapture();
+			};
+			return false;
+		};
+	</script>
+</html>

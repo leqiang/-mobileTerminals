@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				height: 100%;
+				
+			}
+			#content{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 4px;
+				height: 100%;
+				background: deeppink;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="content">
+				
+			</div>
+		</div>
+		<div id="scrollBar">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/transform.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		
+		var navWrap = document.getElementById('wrap');
+		var navs_ul = document.getElementById('content');
+		var scrollBar = document.getElementById('scrollBar');
+				
+		//造文本
+			var text = '';
+			for (var i=0;i<300;i++) {				
+				text += i + '<br/>';
+			};
+			navs_ul.innerHTML = text;
+			
+		var scale = document.documentElement.clientHeight/navs_ul.offsetHeight;
+		scrollBar.style.height = document.documentElement.clientHeight * scale + 'px';	
+			
+
+		var callback = {
+			start:function(){
+				scrollBar.style.opacity = '1';
+				//console.log('start');
+			},
+			move:function(){
+				
+				var dis = transformCss(navs_ul,'translateY') * scale;				
+				transformCss(scrollBar,'translateY',-dis);
+				
+				scrollBar.style.opacity = '1';
+				//console.log('move');
+			},
+			end:function(){
+				scrollBar.style.opacity = 0;
+				//console.log('end');
+			}
+		};
+		
+		navDrag(navWrap,callback);
+		
+		
+		
+		
+//		navDrag();
+//		function navDrag(){
+//			var navWrap = document.getElementById('wrap');
+//			var navs_ul = document.getElementById('content');
+//			
+//		
+//			//造文本
+//			var text = '';
+//			for (var i=0;i<300;i++) {
+//				if(i == 180){
+//					text += '<span style="color: red;">'+ i +'</span><br/>';
+//				};
+//				text += i + '<br/>';
+//			};
+//			navs_ul.innerHTML = text;
+//									
+//			
+//			//简单的拖拽
+//			var startY = 0;
+//			var eleY = 0;
+//			var minY = document.documentElement.clientHeight-navs_ul.offsetHeight;
+//			
+//			//定义时间和位移
+//			var beginTime = 0;
+//			var beginY = 0;
+//			var endTime = 0;
+//			var endY = 0;
+//			
+////			var disTime = 1;
+//			var disVal = 0;
+//			
+//			navWrap.addEventListener('touchstart',function(ev){
+//				var touch = ev.changedTouches[0];	
+//				
+//				//清除过渡
+//				navs_ul.style.transition = 'none';
+//				
+//				startY = touch.clientY;
+//				eleY = transformCss(navs_ul,'translateY');
+//				
+//				//开始的速度和时间
+//				//毫秒				
+//				beginTime = new Date().getTime();
+//				beginY = startY;
+//				
+//				//bug
+////				disTime = 1;
+//				disVal = 0;
+//				
+//			});
+//			navWrap.addEventListener('touchmove',function(ev){
+//				var touch = ev.changedTouches[0];
+//				var nowY = touch.clientY;
+//				
+//				var disY = nowY - startY;
+//				//范围的限定
+//				var translateY = disY+eleY;
+//				
+//				
+//				//scale  1 --->    0
+//				
+//				//拖拽中拖的过程
+//				var scale = 0;				
+//				if(translateY>0){
+//					//translateY = 0;
+//					scale = 1- translateY / document.documentElement.clientHeight;
+//					
+//					translateY = translateY * scale;
+//				}else if(translateY<minY){
+//					//translateY=document.documentElement.clientHeight-navs_ul.offsetHeight;
+//					//留白
+//					var over = minY - translateY;				 					 	
+//				 	scale = 1 - over / document.documentElement.clientHeight;
+//										
+//					translateY = minY - (over * scale);
+//					
+//				}
+//				
+//				transformCss(navs_ul,'translateY',translateY);
+//				
+//				//最后的速度和时间
+//				endTime = new Date().getTime();
+//				endY = nowY;
+//				
+//				disTime = endTime - beginTime;
+//				disVal = endY - beginY;
+//				
+//				
+//			});	
+//			
+//			//快速滑屏和回弹效果
+//			navWrap.addEventListener('touchend',function(ev){
+//				//快速滑屏的速度
+//				//var speed = disVal/disTime;
+//				var speed = disVal/(endTime - beginTime);
+//				
+//				var target = transformCss(navs_ul,'translateY') + speed*200;
+//				
+//				//速度越快speed值增大，回弹越快，相对时间减小
+//				var time = Math.abs(speed)*2;
+//				time = time > 2?2 : time;
+//				
+//				//限定范围
+//				//cubic-bezier(0,1.57,.41,1.73) 
+//				var bezier = '';
+//				if(target>0){
+//					target = 0;
+//					bezier = 'cubic-bezier(0,1.57,.41,1.73)';
+//				}else if(target < minY){
+//					target = minY;
+//					bezier = 'cubic-bezier(0,1.57,.41,1.73)'
+//				};
+//				
+//				console.log(target);
+//				
+//				navs_ul.style.transition = '10s ' + bezier;
+//				transformCss(navs_ul,'translateY',target);
+//			});
+//			
+//		};
+
+
+		
+		
+		
+	</script>
+</html>

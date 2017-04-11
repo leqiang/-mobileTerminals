@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<!--
+			实现原理：
+				让所有布局元素都为rem单位，边框为px单位
+				让页面中所有元素都缩小一半，让布局元素rem*2
+				这样 1px  css像素就变成了1px的物理像素
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 8rem;
+				height: 8rem;				
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+		<!--
+			注意：元素获取的顺序问题
+		-->
+	</body>
+	<script type="text/javascript">
+		//拿到对应设备的像素比
+		var dpr = window.devicePixelRatio || 1;
+		
+		//缩放比，1px  css像素就变成了1px的物理像素，缩小操作   
+		//问题：所有元素都缩放
+		var scale = 1/dpr;
+		
+		//布局元素不需要缩放
+		var rem = document.documentElement.clientWidth/16 * dpr;
+		
+		//重新设置缩放比,实现页面所有元素的缩放
+		var metaNode = document.querySelector('meta[name="viewport"]');
+		metaNode.setAttribute('content','initial-scale='+scale);
+		
+		//将布局元素重置回来
+		//不推荐，别人维护的时候可以随意改动
+		/*var html = document.querySelector('html');
+		html.style.fontSize = rem + 'px';*/
+		
+		var styleNode = document.createElement('style');
+		styleNode.innerHTML = 'html{font-size: '+ rem +'px!important;}'
+		document.head.appendChild(styleNode);
+		
+		
+	</script>
+</html>

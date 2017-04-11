@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			问题：给你一张图片，在任何设备上都能适配，怎么做？
+				百分比适配 （宽度直接设置100%）
+				只有页面简单的时候才推荐使用
+		-->
+		<!--
+			需求：UI给的320px位图像素
+			
+				把所有设备的布局视口都调成320px
+				通过width = 320(大多数设备不兼容)  ---不推荐
+				通过initial-scale来做，但是比例得算出来
+				
+			优点：设计图上的像素能直接使用
+			缺点:320设计图，到750设备上会失真
+		-->
+		<!--
+			目的：UI给的320px位图像素，让所有设备的布局视口变为320px
+				
+		-->
+		<!--
+			网页打开方式，先F12,在粘贴网址
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 160px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var targetW = 320;
+		//screen.width兼容问题
+		var width = screen.width;
+		
+		//屏幕375到320px,是放大操作
+		var scale = width/targetW;
+		
+		//生成meta标签
+		var metaNode = document.createElement('meta');
+		metaNode.setAttribute('name','viewport');
+		metaNode.setAttribute('content','initial-scale ='+scale);
+		document.head.appendChild(metaNode);
+		
+		
+	</script>
+</html>

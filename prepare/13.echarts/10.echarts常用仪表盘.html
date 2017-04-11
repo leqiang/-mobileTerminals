@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!--
+        仪表盘展示数据的特点
+            type是gauge
+        动态修改仪表盘数据
+    -->
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:600px;"></div>
+    
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例echarts.init()
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            series:[
+                {
+                    name:'业务指标',
+                    type:'gauge',
+                    detail:{formatter:'{value}%'},
+                    data:[{value:32,name:'完成率'}]
+                }
+            ]
+        }
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+        
+        //动态显示数据
+        //toFixed() 方法可把 Number 四舍五入为指定小数位数的数字
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random()*100).toFixed(2);
+            myChart.setOption(option);
+        },2000)
+
+    </script>
+</body>
+
+</html>

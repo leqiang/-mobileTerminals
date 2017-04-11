@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<!--头部-->
+			<!--
+				使用绝对定位模拟固定定位
+				原因：大部分安卓机子的浏览器不支持固定定位
+					（ie6不支持固定定位）
+			-->
+			<header id="head">
+				<!--上半部分-->
+				<div id="headerT">
+					<h1 id="logo">
+						<img src="img/logo.png"/>
+					</h1>
+					<a href="javascript:;" id="menuBtn" class="menuBtnClos"></a>
+					<div id="nav">
+						<a href="javascript:;" id="searchBtn">搜索</a>
+						<a href="javascript:;">登录</a>
+						<a href="javascript:;">注册</a>
+					</div>										
+				</div>
+				<!--
+					下半部分
+				-->
+				<form id="search">
+					<input type="text" placeholder="请输入搜索内容"/>
+					<input type="submit" value="搜索"/>
+				</form>											
+				<!--
+					遮罩
+				-->
+				<div id="mask">
+					<ul id="mask_list" style="display: block;">
+						<li>
+							<a href="javascript:void(0)">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">MV</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">悦单</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">V榜</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">音悦</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">商城</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+					</ul>
+				</div>				
+			</header>																
+			<!--内容-->
+			<div id="con_wrap">
+				
+			
+			<section id="container">
+				<!--可拖拽的导航-->
+				<div id="navWrap">
+					<ul id="navs">
+						<li>
+							<a href="javascript:void(0)" class="active">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">MV</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">小黑</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">V榜</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">音悦</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">商城</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王波</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王波团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">赵伟</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">马超</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王小焕</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">王皮</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+					</ul>
+				</div>
+				<!--无缝滑屏-->
+				<div id="pic_wrap">
+					<ul id="pic_list">
+						<li>
+							<a href="javascript:;">
+								<img src="img/1.jpg"/>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/2.jpg"/>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/3.jpg"/>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/4.jpg"/>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/5.jpg"/>
+							</a>
+						</li>
+					</ul>
+					<div id="pic_nav">
+						<span class="active"></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<!--tab选项卡-->
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				<section class="tab">
+					<header class="tab_head">
+						<h3>MV首播</h3>
+						<a href="javascript:;">更多&gt;</a>
+					</header>
+					<nav class="tab_nav">								
+						<a href="javascript:;">全部</a>						
+						<a href="javascript:;">内地</a>
+						<a href="javascript:;">港台</a>
+						<a href="javascript:;">欧美</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>	
+						<span></span>
+					</nav>
+					<div class="tab_wrap">	
+						<ul class="tab_load"></ul>
+						<ul class="tab_content">
+							<li>
+								<a href="javascript:;">
+									<img src="img/a.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/b.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/c.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/d.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/e.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/f.jpg"/>
+									<span>《美女と野獣》日本版主题曲</span>
+								</a>
+								<div class="ice">
+									<div class="ice_left">
+										<a href="javascript:;" class="ice_left_pic"></a>
+										<a href="javascript:;">4.8w</a>
+									</div>
+									<div class="ice_right">
+										<span class="ice_right_pic"></span>
+										<span>13</span>
+									</div>
+								</div>							
+							</li>
+						</ul>
+						<ul class="tab_load"></ul>
+					</div>
+					
+					
+					
+				</section>
+				
+				
+				
+				
+				
+			</section>
+			
+			</div>
+			<!--底部-->
+			
+		</div>
+		<div id="scrollBar">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/transform.js"></script>
+	<script type="text/javascript">
+		//取消默认行为
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		//rem适配		
+		(function(){
+			var width = document.documentElement.clientWidth;
+			var styleNode = document.createElement('style');
+			styleNode.innerHTML = 'html{font-size: ' + width/16 + 'px !important;}';
+			document.head.appendChild(styleNode);
+		})();
+		
+		
+		window.onload = function(){
+			changeMenu();
+			changeFocus();
+			navDrag();
+			changeColor();	
+			bannerAuto();
+			tab();
+			quickMove();
+		};
+		
+		
+		//快速滑屏
+		
+		function quickMove(){
+			var conWrap = document.getElementById('con_wrap');
+			var head = document.getElementById('head');
+			var container = document.getElementById('container');
+			
+			var scrollBar = document.getElementById('scrollBar');
+			
+			var styleN = document.createElement('style');
+			var height = document.documentElement.clientHeight - head.offsetHeight;
+			styleN.innerHTML = '#con_wrap{height: '+ height +'px;}';
+			document.head.appendChild(styleN);
+			
+			var scale = document.documentElement.clientHeight/container.offsetHeight;
+			scrollBar.style.height = document.documentElement.clientHeight * scale + 'px';
+			
+			var callback = {
+				start:function(){
+					scrollBar.style.opacity = '1';
+					//console.log('start');
+				},
+				move:function(){
+					
+					var dis = transformCss(container,'translateY') * scale;				
+					transformCss(scrollBar,'translateY',-dis);
+					
+					scrollBar.style.opacity = '1';
+					//console.log('move');
+				},
+				end:function(){
+					scrollBar.style.opacity = 0;
+					//console.log('end');
+				}
+			};
+			
+			Drag(conWrap,callback);
+			
+		};
+
+		//tab
+		
+		function tab(){
+			var tabWrap = document.querySelectorAll('.tab_wrap');
+			
+			var tabNav = document.querySelectorAll('.tab_nav'); 			
+			var target = tabNav[0].offsetWidth;
+			
+			for (var i=0;i<tabWrap.length;i++) {
+				//把主题内容重置回来
+				transformCss(tabWrap[i],'translateX',-target);
+				transformCss(tabWrap[i],'translateZ',0.0001);
+				//滑屏				
+				move(tabWrap[i],tabNav[i]);
+			};
+			
+			
+			function move(tabWrap,tabNav){
+				
+				
+				var startP = {startX:0,startY:0};
+				var eleP = {startX:0,startY:0};
+//				var startX = 0;
+//				var eleX = 0;
+				//防抖动
+//				var startY = 0;
+//				var eleY = 0;
+				var isFirst = true;
+				var isX = true;
+				
+				//load标识
+				var isLoad = false;
+				
+				//load
+				var loading = document.querySelectorAll('.tab_load');
+				
+				//定义小绿的下标
+				var nowG = 0;
+				var smallGreen = tabNav.querySelector('span');
+				transformCss(smallGreen,'translateZ',0.0001);
+				var smallA = document.querySelectorAll('.tab_nav>a');
+				
+				
+				
+				tabWrap.addEventListener('touchstart',function(ev){
+					var touch = ev.changedTouches[0];
+					
+					//load标识
+					if(isLoad){
+						return;
+					};
+					
+					tabWrap.style.transition = 'none';
+					
+					//startX = touch.clientX;
+					startP.startX = touch.clientX;
+					//eleX = transformCss(tabWrap,'translateX');
+					eleP.startX = transformCss(tabWrap,'translateX');
+					
+					
+					//startY = touch.clientY;
+					startP.startY = touch.clientY;
+					
+					isFirst = true;
+					isX = true;
+				});
+				tabWrap.addEventListener('touchmove',function(ev){
+					var touch = ev.changedTouches[0];
+					
+					//load标识
+					if(isLoad){
+						return;
+					};
+					
+					//抖动，看门狗
+					if(!isX){
+						return
+					};
+					
+					var nowP = {startX:0,startY:0};
+					
+					//var nowX = touch.clientX;
+					nowP.startX = touch.clientX;
+					
+					//var disX = nowX - startX;
+					var disX = nowP.startX - startP.startX;
+					
+					//var nowY = touch.clientY;
+					nowP.startY = touch.clientY;
+					
+					//var disY = nowY - startY;
+					var disY = nowP.startY - startP.startY;
+					
+					//抖动
+					if(isFirst){
+						isFirst = false;
+						if(Math.abs(disY)>Math.abs(disX)){
+							isX = false;
+						};
+						
+					};
+															
+					transformCss(tabWrap,'translateX',eleP.startX+disX);
+					
+					//当disX>1/2时，自己自动跳到下一张
+					if(Math.abs(disX)>target/2){
+						
+						//load出现
+						isLoad = true;
+						//进行跳转
+						var translateX = 0;
+						if(disX>0){
+							//右
+							translateX = 0;
+							nowG = nowG - 1;
+						}else{
+							//左
+							translateX = -2*target;
+							nowG = nowG + 1;
+						};
+						
+						
+						//范围的限定nowG
+						if(nowG > 5){
+							nowG = 0;
+						}else if(nowG < 0){
+							nowG = 5;
+						};
+						console.log(nowG);
+												
+						tabWrap.style.transition = '0.5s';
+						transformCss(tabWrap,'translateX',translateX);
+						
+						//当我页面跳转之后load出现，过渡执行完成之后才出现
+						//兼容问题
+						tabWrap.addEventListener('transitionEnd',transitionEnd);
+						tabWrap.addEventListener('webkitTransitionEnd',transitionEnd);
+				};
+					
+					function transitionEnd(){
+						
+						//解绑
+						tabWrap.removeEventListener('transitionEnd',transitionEnd);
+						tabWrap.removeEventListener('webkitTransitionEnd',transitionEnd);
+						
+						for (var i=0;i<loading.length;i++) {
+							loading[i].style.opacity = '1';
+						};
+						
+						//小绿动起来
+						
+						smallGreen.style.transition = '0.5s';												
+						transformCss(smallGreen,'translateX',smallA[nowG].offsetLeft);
+						
+						//模拟ajax过程,把主题内容拉回来
+						
+						setTimeout(function(){
+							
+							tabWrap.style.transition = 'none';
+							transformCss(tabWrap,'translateX',-target);
+							//load消失
+							isLoad = false;
+							for (var i=0;i<loading.length;i++) {
+								loading[i].style.opacity = 0;
+							};
+						},1000);
+						
+					};
+					
+					
+					
+					
+				});
+				//未过一半，调回当前页面
+				tabWrap.addEventListener('touchend',function(ev){
+					var touch = ev.changedTouches[0];
+					
+					//load标识
+					if(isLoad){
+						return;
+					};
+					
+					
+					var nowX = touch.clientX;
+					var disX = nowX - startP.startX;
+					
+					if(Math.abs(disX)<target/2){
+						
+						tabWrap.style.transition = '0.5s';
+						transformCss(tabWrap,'translateX',-target);
+					};
+					
+					
+					
+				});
+				
+				
+			};
+			
+		};
+
+
+		//无缝滑屏
+		
+		function bannerAuto(){
+			//获取元素
+			var wrap = document.getElementById('pic_wrap');
+			var list = document.getElementById('pic_list');
+			transformCss(list,'translateZ',0.0001);
+			list.innerHTML += list.innerHTML;
+			var lis = document.querySelectorAll('#pic_list li');
+			var spanNodes = document.querySelectorAll('#pic_nav span');
+			
+			//布局（宽度）
+			
+			var styleNode = document.createElement('style');
+			var cssText = '#pic_list{width: '+ lis.length + '00%;}';
+			cssText += '#pic_list li {width:' + (1/lis.length*100) + '%}';			
+			cssText += '#pic_wrap{height:' + lis[0].offsetHeight + 'px;}';
+			styleNode.innerHTML += cssText;
+			document.head.appendChild(styleNode);
+			
+			//滑屏模板
+			var startX = 0;
+			var elementX =0;
+
+			//垂直方向上的距离
+			var startY = 0;
+			var elementY =0;
+			
+			//判断第一次滑动
+			var isFirst = true;
+			//是否是在X轴上滑动
+			var isX = true;
+			
+			//当前图片下标
+			var now = 0;
+			
+			//定时器
+			var timer = 0;
+			
+			wrap.addEventListener('touchstart',function(ev){
+				var touch = ev.changedTouches[0];
+				
+				clearInterval(timer);
+				//touchstart,图片有第一组第一张跳转到，第二组第一张
+				//touchstart,在图片第二组第五张上，调到第一组第五张
+				if(now == 0){
+					now = spanNodes.length;
+				}else if(now == lis.length-1){
+					now = spanNodes.length-1;
+				}
+				//同步位置
+				transformCss(list,'translateX',-now * document.documentElement.clientWidth);
+				
+				list.style.transition = 'none';
+				
+				startX = touch.clientX;								
+				elementX = transformCss(list,'translateX');
+				
+				startY = touch.clientY;		
+				elementY = transformCss(list,'translateY');
+				
+				isFirst = true;
+				isX = true;
+				
+			});
+			
+			wrap.addEventListener('touchmove',function(ev){
+				var touch = ev.changedTouches[0];
+				
+				if(!isX){
+					return;
+				}
+				
+				var nowX = touch.clientX;
+				var disX = nowX - startX;				
+					
+				var nowY = touch.clientY;
+				var disY = nowY - startY;
+				
+				//判断
+//				if(Math.abs(disY)>Math.abs(disX)){
+//					return;
+//				};
+				
+				if(isFirst){
+					isFirst = false;
+					if(Math.abs(disY)>Math.abs(disX)){
+						isX = false;
+						//return;
+					};
+				}
+					
+				transformCss(list,'translateX',elementX + disX);				
+				
+			});
+			
+			wrap.addEventListener('touchend',function(ev){
+				var touch = ev.changedTouches[0];
+				
+				list.style.transition = '0.5s';
+				
+				var left = transformCss(list,'translateX');
+												
+				now = Math.round(-left/document.documentElement.clientWidth);
+				
+				//范围的限定
+				if(now<0){
+					now = 0;
+				}else if(now > lis.length-1){
+					now = lis.length-1;
+				};
+								
+				transformCss(list,'translateX',-now * document.documentElement.clientWidth);
+				
+				//处理小圆点
+				for(var i=0;i<spanNodes.length;i++){
+					spanNodes[i].className = '';
+				}
+				spanNodes[now%spanNodes.length ].className = 'active';
+				
+				autoPlay();
+			});
+			
+			
+			
+			//自动轮播
+			autoPlay();
+			
+			//var now = 0;
+			
+			function autoPlay(){
+				clearInterval(timer);
+				timer = setInterval(function(){
+					
+					if(now == lis.length-1){
+						now = spanNodes.length -1;
+						list.style.transition = 'none';
+						transformCss(list,'translateX',-now*document.documentElement.clientWidth)
+					};
+					
+					setTimeout(function(){
+						now++;
+						list.style.transition = '.5s';
+						transformCss(list,'translateX',-now*document.documentElement.clientWidth)
+						
+						//处理小圆点
+						for(var i=0;i<spanNodes.length;i++){
+							spanNodes[i].className = '';
+						};
+						spanNodes[now%spanNodes.length ].className = 'active';
+					},20);
+					
+				},2000);
+				
+				
+			};
+			
+			
+			
+		};
+
+
+		//点击颜色切换
+			
+		function changeColor(){
+			var navs = document.getElementById('navs');
+			var liNodes = document.querySelectorAll('#navs li a');
+			
+			
+			for (var i=0;i<liNodes.length;i++) {
+				//误触
+				liNodes[i].addEventListener('touchmove',function(){
+					if(!this.isMove){
+						this.isMove = true;
+					};									
+				});
+				
+				liNodes[i].addEventListener('touchend',function(ev){
+					if(!this.isMove){
+						for (var j=0;j<liNodes.length;j++) {
+							liNodes[j].className = '';
+						}
+						this.className = 'active';	
+					};
+					this.isMove = false;
+				});								
+			};
+				
+			//event.target	
+//			navs.addEventListener('touchmove',function(){
+//				if(!this.isMove){
+//					this.isMove = true;
+//				};
+//			})
+//			navs.addEventListener('touchend',function(ev){
+//				var touch = ev.changedTouches[0];
+//				if(!this.isMove){
+//					
+//					for (var i=0;i<liNodes.length;i++) {
+//						liNodes[i].className = '';
+//					};
+//										
+//					if(touch.target.nodeName.toUpperCase() == 'A'){
+//						touch.target.parentNode.className = 'active';
+//					}else if(touch.target.nodeName.toUpperCase() == 'LI'){
+//						touch.target.className = 'active';
+//					};										
+//				};
+//				
+//				this.isMove = false;
+//				
+//			});
+						
+						
+						
+//方法一：						
+			//给每一个li绑定监听事件
+//			for (var i=0;i<liNodes.length;i++) {
+//				//误触
+//				liNodes[i].addEventListener('touchmove',function(){
+//					if(!this.isMove){
+//						this.isMove = true;
+//					};									
+//				});
+//				
+//				liNodes[i].addEventListener('touchend',function(ev){
+//					if(!this.isMove){
+//						for (var j=0;j<liNodes.length;j++) {
+//							liNodes[j].className = '';
+//						}
+//						this.className = 'active';	
+//					};
+//					this.isMove = false;
+//				});								
+//			};
+			
+			
+			
+		};
+		
+
+
+		//可拖拽的导航
+		
+		function navDrag(){
+			var navWrap = document.getElementById('navWrap');
+			var navs_ul = document.getElementById('navs');
+			transformCss(navs_ul,'translateZ',0.0001);
+			
+			//简单的拖拽
+			var startX = 0;
+			var eleX = 0;
+			var minX = document.documentElement.clientWidth-navs_ul.offsetWidth;
+			
+			//定义时间和位移
+			var beginTime = 0;
+			var beginX = 0;
+			var endTime = 0;
+			var endX = 0;
+			
+//			var disTime = 1;
+			var disVal = 0;
+			
+			navWrap.addEventListener('touchstart',function(ev){
+				var touch = ev.changedTouches[0];	
+				
+				//清除过渡
+				navs_ul.style.transition = 'none';
+				
+				startX = touch.clientX;
+				eleX = transformCss(navs_ul,'translateX');
+				
+				//开始的速度和时间
+				//毫秒				
+				beginTime = new Date().getTime();
+				beginX = startX;
+				
+				//bug
+//				disTime = 1;
+				disVal = 0;
+				
+			});
+			navWrap.addEventListener('touchmove',function(ev){
+				var touch = ev.changedTouches[0];
+				var nowX = touch.clientX;
+				
+				var disX = nowX - startX;
+				//范围的限定
+				var translateX = disX+eleX;
+				
+				
+				//scale  1 --->    0
+				
+				//拖拽中拖的过程,越来越难拖
+				var scale = 0;				
+				if(translateX>0){
+					//translateX = 0;
+					scale = 1- translateX / document.documentElement.clientWidth;
+					
+					translateX = translateX * scale;
+				}else if(translateX<minX){
+					//translateX=document.documentElement.clientWidth-navs_ul.offsetWidth;
+					//留白
+					var over = minX - translateX;				 					 	
+				 	scale = 1 - over / document.documentElement.clientWidth;
+										
+					translateX = minX - (over * scale);
+					
+				}
+				
+				transformCss(navs_ul,'translateX',translateX);
+				
+				//最后的速度和时间
+				endTime = new Date().getTime();
+				endX = nowX;
+				
+				disTime = endTime - beginTime;
+				disVal = endX - beginX;
+				
+				
+			});	
+			
+			//快速滑屏和回弹效果
+			navWrap.addEventListener('touchend',function(ev){
+				//快速滑屏的速度
+				//var speed = disVal/disTime;
+				var speed = disVal/(endTime - beginTime);
+				console.log(speed);
+				var target = transformCss(navs_ul,'translateX') + speed*80;
+				
+				//速度越快speed值增大，回弹越快，相对时间减小
+				var time = Math.abs(speed)*0.3;
+				time = time > 0.3?0.3 : time;
+				
+				//限定范围
+				//cubic-bezier(0,1.57,.41,1.73) 
+				var bezier = '';
+				if(target>0){
+					target = 0;
+					bezier = 'cubic-bezier(0,1.57,.41,1.73)';
+				}else if(target < minX){
+					target = minX;
+					bezier = 'cubic-bezier(0,1.57,.41,1.73)'
+				};
+				
+				navs_ul.style.transition = time + 's ' + bezier;
+				transformCss(navs_ul,'translateX',target);
+			});
+			
+		};
+
+
+		//切换焦点
+		
+		function changeFocus(){
+			var inputNode = document.querySelector('#search input[type="text"]');
+			
+			inputNode.addEventListener('touchstart',function(ev){
+				//获取焦点
+				this.focus();
+				ev.stopPropagation();
+			});
+			
+			//PC端的事件，在移动端回去300ms延迟问题（点透事件）
+//			inputNode.addEventListener('blur',function(){
+//				//this.blur();
+//				//console.log(123);
+//				//this.style.bgColor = '#999';
+//				this.style.background = '#999';
+//			});
+
+			document.addEventListener('touchstart',function(){
+				inputNode.blur();				
+			});
+		};
+
+
+		//切换菜单
+		
+		function changeMenu(){
+			var menuBtn = document.getElementById('menuBtn');
+			var mask = document.getElementById('mask');
+			
+			menuBtn.addEventListener('touchstart',function(ev){
+				if(this.className == 'menuBtnClos'){
+					this.className = 'menuBtnOpen';
+					mask.style.display = 'block';
+				}else if(this.className == 'menuBtnOpen'){
+					this.className = 'menuBtnClos';
+					mask.style.display = 'none';
+				};
+				
+				ev.stopPropagation();
+				
+			});
+			document.addEventListener('touchstart',function(){
+				 if(menuBtn.className == 'menuBtnOpen'){
+					menuBtn.className = 'menuBtnClos';
+					mask.style.display = 'none';
+				};				
+			});
+			mask.addEventListener('touchstart',function(ev){
+				ev.stopPropagation();
+			});			
+		};
+	
+	</script>
+</html>

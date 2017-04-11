@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*禁止系统默认滚动条*/
+			html{
+				height: 100%;
+				overflow: hidden;
+			}
+			body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 20px;
+				height: 100%;
+				background: gray;
+			}
+			#inner{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 20px;
+				height: 40px;
+				background: plum;
+			}
+			#content{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<!--滚动条-->
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+		<!--内容区-->
+		<div id="content">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//屏幕缩放时的高度
+		window.onresize = function(){
+			//滚动条的高度
+			var scale = document.documentElement.clientHeight / contentNode.offsetHeight;
+			inner.style.height = document.documentElement.clientHeight * scale + 'px';
+			
+		}
+		
+		var contentNode = document.getElementById('content');
+		//造文本，让页面中出现滚动条
+		var text = '';
+		for (var i=0;i<300;i++) { 
+			text += (i+1)+"<br/>";
+		}
+		contentNode.innerHTML = text;
+	
+		var inner = document.getElementById('inner');
+	
+		//滚动条的高度
+		var scale = document.documentElement.clientHeight / contentNode.offsetHeight;
+		inner.style.height = document.documentElement.clientHeight * scale + 'px';
+	
+		
+		
+		//鼠标点击的初始位置
+		var startY = 0;
+		//元素的初始位置
+		var elementY = 0;
+		
+		inner.onmousedown = function(ev){
+			var ev = ev || event;
+			
+			startY = ev.clientY;
+			elementY = inner.offsetTop;
+			
+			inner.setCapture && inner.setCapture();
+			document.onmousemove = function(ev){
+				var ev = ev || event;
+				
+				var nowY = ev.clientY;
+				//鼠标的位移差
+				var disY = nowY - startY;
+				
+				//滚动条滑动的范围
+				var T = elementY + disY;
+				
+				if(T < 0){
+					T = 0;
+				}else if(T > document.documentElement.clientHeight - inner.offsetHeight){
+					T = document.documentElement.clientHeight - inner.offsetHeight;
+				}
+				
+				//最终滚动条拖动的距离
+				inner.style.top = T + 'px';
+				
+				//var scale = T / (document.documentElement.clientHeight - inner.offsetHeight);
+				//contentNode.style.top = -(contentNode.offsetHeight - document.documentElement.clientHeight)*scale + 'px';
+				
+				//系数统一之后
+				contentNode.style.top = -T / scale + 'px';
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;				
+				document.releaseCapture && document.releaseCapture();				
+			}			
+			return false ;
+		}
+		
+	</script>
+</html>

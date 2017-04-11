@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<!--
+			在移动端，手指长按，文字就会选中，甚至会出现系统弹窗
+			但是，对于我们来说，并不是所有功能都需要
+			所有，我们禁止系统的默认行为，然后根据我们的需要添加功能
+			
+			为什么要取消默认行为？
+			在移动端，手指触屏滑动触发touchstart事件
+			但是实际生活中，并没有实现点击功能
+			如果此时有默认行为，是不是要出现点击跳转等行为
+			
+			系统默认行为不可控，不利于开发维护
+		-->
+		<!--
+			取消事件默认行为
+			dom0:return false
+			dom2:evevt.preventDefault();
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+		</div>
+	</body>
+	<script type="text/javascript">
+		//禁止系统默认行为
+		document.addEventListener('touchstart',function(event){
+			event.preventDefault();
+		})
+	</script>
+</html>

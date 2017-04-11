@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<!--头部-->
+			<header id="head">
+				<!--上半部分-->
+				<div id="headerT">
+					<h1 id="logo">
+						<img src="img/logo.png"/>
+					</h1>
+					<a href="javascript:;" id="menuBtn" class="menuBtnClos"></a>
+					<div id="nav">
+						<a href="javascript:;" id="searchBtn">搜索</a>
+						<a href="javascript:;">登录</a>
+						<a href="javascript:;">注册</a>
+					</div>										
+				</div>
+				<!--
+					下半部分
+				-->
+				<form id="search">
+					<input type="text" placeholder="请输入搜索内容"/>
+					<input type="submit" value="搜索"/>
+				</form>											
+				<!--
+					遮罩
+				-->
+				<div id="mask">
+					<ul id="mask_list" style="display: block;">
+						<li>
+							<a href="javascript:void(0)">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">MV</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">悦单</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">V榜</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">音悦</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">商城</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">节目</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">饭团</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">资讯</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">我的家</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">APP下载</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">热门应用</a>
+						</li>
+					</ul>
+				</div>
+				
+			</header>
+				
+				
+				
+				
+			<!--内容-->
+			
+			<!--底部-->
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//取消默认行为
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		//rem适配		
+		(function(){
+			var width = document.documentElement.clientWidth;
+			var styleNode = document.createElement('style');
+			styleNode.innerHTML = 'html{font-size: ' + width/16 + 'px !important;}';
+			document.head.appendChild(styleNode);
+		})();
+		
+		
+		
+	</script>
+</html>

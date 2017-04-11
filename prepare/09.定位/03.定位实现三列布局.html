@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			两边固定，中间自适应
+		-->
+		<!--
+			正常布局
+			定位
+			内容为显示
+			内容区被压缩(min-width)
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				/*
+				 * 当浏览器窗口减小，中间内容变没了，给body一个最小宽度
+				 * 2*left + right
+				 */
+				min-width: 600px;
+			}
+			div{
+				height: 200px;
+				background: pink;
+			}
+			#middle{
+				background: greenyellow;
+				/*让中间内容显示出来*/
+				margin: 0 200px;
+				/*padding: 0 200px;  有背景色渲染*/
+			}
+			#left,#right{
+				width: 200px;
+				background: pink;
+			}
+			#left{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#right{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			缺点：当出现滚动条时，内容区在滚动条后边显示，而且内容区仍旧被压缩
+			
+			不推荐
+			
+		-->
+		<div id="left">
+			left
+		</div>
+		<div id="middle">
+			middle
+		</div>
+		<div id="right">
+			right
+		</div>
+	</body>
+</html>

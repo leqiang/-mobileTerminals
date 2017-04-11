@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			布局：有头 有尾 有内容     	先加载middle内容
+			浮动让三者在一行，出现高度塌陷，清浮动
+			给middle宽度100%
+			left上去：margin-left: -100%; right同理
+			middle内容未显示，container:margin: 0 200px;
+			此时用相对定位把left,right拉回来
+			
+			最小宽度问题：min-width:600px
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				min-width: 600px;
+			}
+			#header,#footer{
+				width: 100%;
+				background: gray;
+				text-align: center;
+				border: 1px solid;
+			}
+			#container{
+				padding: 0 200px;
+			}
+			#left,#right,#middle{
+				float: left;
+			}
+			#left,#right{
+				width: 200px;
+				
+				background: yellow;
+			}
+			#left{
+				position: relative;
+				left: -200px;
+				margin-left: -100%;
+			}
+			#right{
+				position: relative;
+				right: -200px;
+				margin-left: -200px;
+			}
+			#middle{
+				width: 100%;
+				
+				background: yellowgreen;
+				
+			}
+			
+			.clearfix{
+				*zoom: 1;
+			}
+			.clearfix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			header
+		</div>
+		<div id="container" class="clearfix">
+			<div id="middle">
+				middle<br />
+				
+				
+				
+			</div>
+			<div id="left">
+				left
+				
+			</div>
+			<div id="right">
+				right
+			</div>			
+		</div>
+		<div id="footer">
+			footer
+		</div>
+	</body>
+</html>

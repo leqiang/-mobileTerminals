@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html style="border: 1px solid;height: 500px;width: 100%;margin: 30px;">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			position: absolute;
+			
+			如果有父级元素，父级元素开启定位，  参照父级定位
+			没有父级元素,参照初始包含块
+			
+			left,top,right,bottom 默认值  auto
+			
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				position: absolute;
+				/*top: 0;
+				left: 0;*/
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body style="border: 1px solid red;height: 300px;width: 100%;margin: 30px;">
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 100px;
+				height: 100px;
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body style="height: 3000px;">
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var test = document.getElementById('test');
+		
+		test.onmousewheel = fn;
+		test.addEventListener('DOMMouseScroll',fn);
+		
+		function fn(ev){
+			var ev = ev || event;
+			
+			//标记向上还是向下
+			var flag = '';
+			if (ev.wheelDelta) {
+				//ie  谷歌
+				if (ev.wheelDelta>0) {
+					flag = 'up';
+				} else{
+					flag = 'down';
+				}
+			} else if(ev.detail){
+				//火狐
+				if (ev.detail<0) {
+					flag = 'up';
+				} else{
+					flag = 'down';
+				}
+				
+			}
+			
+			switch (flag){
+				
+				case 'up':
+					//鼠标向上滚，元素高度减小
+					test.style.height = test.offsetHeight - 10 + 'px';
+					break;
+				case 'down':
+					//鼠标向上滚，元素高度减小
+					test.style.height = test.offsetHeight + 10 + 'px';
+					break;
+				
+			}
+			
+			if(ev.preventDefault){
+				ev.preventDefault();
+			};
+			return false;
+			
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: yellowgreen;
+				/*transform: scale(2) translateX(200px) ;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<!--
+		js封装成一个函数 transformCss
+		
+		rotate(360deg)   0
+		skew(45deg)
+		skewX(45deg)
+		skewY(45deg)
+		
+		
+		scale(2)     1
+		scaleX(2)
+		scaleY(2)
+		
+		translate(100px)  0
+		translateX(100px)
+		translateY(100px)
+		
+		 transformCss(box,'translateX',200)  写
+		 transformCss(box,'translateX')  读
+	-->
+	<script type="text/javascript" src="js/transform.js">
+		
+	</script>
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		
+		transformCss(box,'translateX',200);
+		//transformCss(box,'scale',2)
+		
+		console.log(transformCss(box,'translateX'));
+		
+		
+//		function transformCss(dom,name,value){
+//			if(!dom.transform){
+//				dom.transform = {};
+//			};
+//			
+//			if(arguments.length > 2){
+//				//写
+//				dom.transform[name] = value;
+//				var result = '';
+//				
+//				for (var item in dom.transform) {
+//					
+//					switch (item){
+//						case 'rotate':
+//						case 'skew':
+//						case 'skewX':
+//						case 'skewY':
+//							result += item + '('+ dom.transform[item] +'deg) '
+//							break;
+//						case 'scale':
+//						case 'scaleX':
+//						case 'scaleY':					
+//							result += item + '('+ dom.transform[item] +') '
+//							break;
+//						case 'translate':
+//						case 'translateX':
+//						case 'translateY':						
+//							result += item + '('+ dom.transform[item] +'px) '
+//							break;						
+//					}															
+//				}
+//				
+//				dom.style.transform = result;
+//				
+//			}else{
+//				//读
+//				
+//				if(typeof dom.transform[name] == 'undefined'){
+//					//默认值
+//					if(name == 'scale' || name == 'scaleX' || name == 'scaleY'){
+//						value = 1;
+//					}else{
+//						value = 0;
+//					}										
+//				}else{
+//					value = dom.transform[name];
+//				}
+//				
+//				return value;
+//			}
+//		
+//		}
+//		
+		
+	</script>
+</html>

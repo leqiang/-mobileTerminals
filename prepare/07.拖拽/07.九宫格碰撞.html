@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: blueviolet;
+				z-index: 100;
+			}
+			img{
+				position: absolute;
+				left: 500px;
+				top: 190px;
+				width: 320px;
+				height: 244px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+		
+		<img id="changeImg" src="img/a.png"/>
+		<!--<img src="img/b.jpg"/>-->
+	</body>
+	<script src="js/frag.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var test = document.getElementById('test');
+		var changeImg = document.getElementById('changeImg');
+		
+		frag(test,changeImg);
+		
+		
+			
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="600"></canvas>
+	</body>
+	<script type="text/javascript">
+		var myCanvas = document.getElementById('myCanvas');
+		
+		var pen = myCanvas.getContext('2d');
+				
+		pen.beginPath();
+		
+		pen.strokeStyle = 'cyan';
+		
+		var circle = {
+			x:250,
+			y:300,
+			r:100
+		};
+		
+		pen.arc(circle.x,circle.y,circle.r,0,Math.PI*2,true);
+		
+		pen.stroke();
+		
+	</script>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width = device-width,initial-scale = 1.0"/>
+		<style type="text/css" id="css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html{
+				height: 100%;
+				overflow: hidden;
+			}
+			body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				position: relative;
+			}
+			ul{
+				list-style: none;
+			}
+			#list{
+				position: absolute;
+				overflow: hidden;				
+			}
+			#list li{
+				float: left;
+			}
+			#list li a img{
+				display: block;
+				width: 100%;
+			}
+			#nav{
+				position: absolute;
+				left: 0;
+				bottom: 9px;
+				width: 100%;
+				height: 10px;
+				z-index: 10;
+				text-align: center;
+			}
+			#nav span{
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background: gray;
+			}
+			#nav .active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul id="list">
+				<li>
+					<a href="javascript:;">
+						<img src="img/1.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/2.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/3.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/4.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/5.jpg"/>
+					</a>
+				</li>
+			</ul>
+			<div id="nav">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/transform.js"></script>
+	<script type="text/javascript">
+		//清除默认行为
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		window.onload = function(){
+			//元素获取
+			var wrap = document.getElementById('wrap');
+			var list = document.getElementById('list');	
+			//添加li
+			list.innerHTML += list.innerHTML;
+			var lis = document.getElementsByTagName('li');
+			var spanNodes = document.querySelectorAll('#nav span')
+			
+			//布局
+			var styleNode = document.getElementById('css');
+			var cssText = '#list{width: '+ lis.length +'00%;}';	
+			cssText += '#list li{width: '+ (1/lis.length)*100+'%;}';
+			cssText += '#wrap{height: '+lis[0].offsetHeight+'px;}';
+			styleNode.innerHTML += cssText;
+			
+			//定义元素和鼠标初始位置
+			var startX = 0;
+			var elementX = 0;
+			//用来存储元素的位移量
+			//var translateX = 0;
+			
+			wrap.addEventListener('touchstart',function(ev){
+				
+				//清除过渡
+				list.style.transition = 'none';
+				
+				//处理无缝
+				var left = css(list,'translateX');
+				console.log(left);
+				var now = Math.round(-left/document.documentElement.clientWidth);
+				console.log(now);
+				if(now == 0){
+					now = spanNodes.length;
+					console.log(now);
+				}else if(now == lis.length-1){
+					now = spanNodes.length-1;
+				};
+				css(list,'translateX',-now*document.documentElement.clientWidth);
+				
+				var touch = ev.changedTouches[0];
+				startX = touch.clientX;
+				elementX = css(list,'translateX');
+			});
+			
+			wrap.addEventListener('touchmove',function(ev){
+				var touch = ev.changedTouches[0];
+				var nowX = touch.clientX;
+				var disX = nowX - startX;
+				
+				
+				css(list,'translateX',elementX + disX);
+				//list.style.transform = 'translateX('+ translateX +'px)';
+			});
+			
+			wrap.addEventListener('touchend',function(ev){
+				var touch = ev.changedTouches[0];
+				
+				list.style.transition = '.5s';
+				
+				
+				//ul的偏移量
+				var left = css(list,'translateX');
+				//定义图片下标
+				var now = 0;
+				
+				now = Math.round(-left / document.documentElement.clientWidth);
+				
+				//滑屏出现空白，控制now的范围
+				if(now < 0){
+					now = 0; 
+				}else if(now > lis.length-1){
+					now = lis.length - 1;
+				}
+				
+				
+				
+				//list.style.transform = 'translateX('+ translateX +'px)';
+				css(list,'translateX',-now * document.documentElement.clientWidth);
+				
+				//同步小圆点
+				for (var i=0;i<spanNodes.length;i++) {
+					spanNodes[i].className = '';
+				}
+				spanNodes[now%spanNodes.length].className = 'active';
+			})
+			
+			
+			//自动轮播
+			auto();
+			//同步now
+			var autoFlag = 0;
+			
+			function auto(){
+				
+				setInterval(function(){
+					//去除空白的轮播
+					if(autoFlag == lis.length-1){
+						//处理第10张到第5张之间的过渡，但是依旧解决不了，因为css渲染问题
+						list.style.transition = 'none';
+						autoFlag = spanNodes.length-1;
+						css(list,'translateX',-autoFlag*document.documentElement.clientWidth);
+					}
+					
+					setTimeout(function(){
+						
+						//实现最初的自动轮播
+						autoFlag++;
+						list.style.transition = '.5s',
+						css(list,'translateX',-autoFlag*document.documentElement.clientWidth);
+						
+						//同步小圆点
+						for (var i=0;i<spanNodes.length;i++) {
+							spanNodes[i].className = '';
+						}
+						spanNodes[autoFlag%spanNodes.length].className = 'active';
+					},20);
+					
+						
+				},1000);
+				
+			}
+			
+		}
+		
+	</script>
+</html>

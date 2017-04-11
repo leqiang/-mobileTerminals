@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title></title>
+		<!--	
+			(DOM0)1.obj.onclick = fn;	
+				
+			(DOM2)2.ie :obj.attachEvent(事件名称，事件函数);
+			       	标准:obj.addEventListener(事件名称，事件函数，是否捕获);
+			       	
+			touchstart 手指触摸 == mousedown 
+			touchend 手指抬起 == mouseup
+			touchmove 手指移动== mousmove			
+				
+			touch事件  在 chrome的模拟器下，部分版本 通过on的方式来添加事件无效
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var test = document.getElementById('test');
+		
+		//dom0  模拟器中不生效，只能真机测试
+//		test.ontouchstart = function(){
+//			alert('touchstart');
+//		};
+//		test.ontouchmove = function(){
+//			alert('touchmove');
+//		};
+//		test.ontouchend = function(){
+//			alert('touchend');
+//		};
+
+		//dom2   推荐使用，方便维护
+		test.addEventListener('touchstart',function(){
+			console.log('touchstart');
+		});
+		test.addEventListener('touchmove',function(){
+			console.log('touchmove');
+		});
+		test.addEventListener('touchend',function(){
+			console.log('touchend');
+		});
+		
+		
+		
+		
+		
+	</script>
+</html>

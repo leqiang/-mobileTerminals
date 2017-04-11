@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			优点：
+				内容部分(中间列)优先加载
+				结构上仅仅添加了一个父级容器
+				任何一列都可以作为最高列
+			缺点：
+				多写了一成html结构
+
+			两组实现的对比:
+				1.两种布局方式都是把主列放在文档流最前面，使主列优先加载。
+				2.两种布局方式在实现上也有相同之处，都是让三列浮动，然后通过负外边距形成三列布局。
+				3.两种布局方式的不同之处在于如何处理中间主列的位置：
+						圣杯布局是利用父容器的左、右内边距定位；
+						双飞翼布局是把主列嵌套在div后利用主列的左、右外边距定位
+
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				min-width: 600px;
+			}
+			#header,#footer{
+				border: 1px solid;
+				text-align: center;
+				background: gray;
+			}
+			#container{
+				padding: 0 200px;
+				overflow: hidden;
+			}
+			#left,#right,#middle{
+				background: pink;
+				/*height: 100px;*/
+				float: left;
+				/*浮动元素：高度和宽度由内容区撑开*/
+				
+				padding-bottom: 10000px;
+				margin-bottom: -10000px;
+			}
+			#left{
+				position: relative;
+				left: -200px;
+				margin-left: -100%;
+				width: 200px;
+			}
+			#right{
+				position: relative;
+				right: -200px;
+				margin-left: -200px;
+				width: 200px;
+				}
+			#middle{
+				width: 100%;
+				background: deeppink;
+				/*padding: 0 200px;*/
+			}
+			/*清除浮动*/
+			.clearfix{
+				/*触发了ie底下的haslayout*/
+				*zoom: 1;
+			}
+			.clearfix:after{
+				content: '';
+				clear: both;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			header
+		</div>
+		<!--布局内容-->
+		<div id="container" class="clearfix">
+			<div id="middle">
+				middle
+			</div>
+			<div id="left">
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				
+			</div>
+			<div id="right">
+				right
+			</div>
+		</div>	
+		
+		<div id="footer">
+			footer
+		</div>		
+	</body>
+</html>

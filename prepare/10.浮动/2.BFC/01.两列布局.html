@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			左边固定，右边自适应
+			
+			4.BFC的区域不会与float box重叠。
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#left{
+				float: left;
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+			#right{
+				height: 200px;
+				background: pink;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			left	
+		</div>
+		<div id="right">
+			right
+		</div>
+	</body>
+</html>

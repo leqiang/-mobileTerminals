@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			给父级浮动，或者开启绝对定位，固定定位
+			但是左右margin失效（本质开启BFC）
+			
+			ie6 7 下，没有BFC（开启haslayout）
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				/*position: absolute;*/
+				/*position: fixed;*/
+				width: 400px;
+				border: 1px solid;
+				margin: 0 auto;
+				/*float: left;*/
+			}
+			#inner{
+				float: left;
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+</html>

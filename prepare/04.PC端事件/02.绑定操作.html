@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--	
+			(DOM0)1.obj.onclick = fn;	
+				
+			(DOM2)2.ie :obj.attachEvent(事件名称，事件函数);
+			       	标准:obj.addEventListener(事件名称，事件函数，是否捕获);
+			       	
+			    1. DOM2,不会存在前后覆盖问题
+				2. DOM2,在chrome的模拟器下可以一直识别
+		-->
+		<!--
+			dom0可以编写在标签中
+			
+				1.耦合问题
+				2.问题 --- this
+		-->
+		<input type="button" name="btn" id="btn" value="测试" /><!--onclick="fun()"-->
+	</body>
+	<script type="text/javascript">
+		//两种dom0绑定方式，this不一样
+		//回调中的this不能确定
+		//this的几种方式，有什么？
+		function fun(){
+			//console.log('你好');
+			console.log(this); //window
+		}
+		
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+			console.log(this);//input
+		}
+		
+		
+		//dom2
+		btn.addEventListener('click',function(){
+			console.log(this);//input
+		})
+		
+	</script>
+</html>

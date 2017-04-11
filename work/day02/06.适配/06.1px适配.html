@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title></title>
+		<!--
+			initial-scale=0.5
+			
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 8rem;
+				height: 8rem;
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<!--
+		1物理像素		  0.5css像素
+	-->
+	<script type="text/javascript">
+		var dpr = window.devicePixelRatio || 1;
+		
+		var scale = 1/dpr;
+		
+		var width = document.documentElement.clientWidth/16 * dpr;
+		
+		var metaNode = document.querySelector('meta[name="viewport"]');		
+		metaNode.setAttribute('content','initial-scale='+scale);
+		
+						
+		var styleNode = document.createElement('style');		
+		styleNode.innerHTML = 'html{font-size:'+ width +'px}';
+		document.head.appendChild(styleNode);
+		
+	</script>
+</html>

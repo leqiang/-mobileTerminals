@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//rem
+		
+//		var width = document.documentElement.clientWidth;
+//		var styleN = document.createElement('style');
+//		styleN.innerHTML = 'html{font-size:'+ width/16 +'px !important}';
+//		document.head.appendChild(styleN);
+
+
+		//viewport
+		
+//		var width = document.documentElement.clientWidth;
+//		var scale = width/targetW;		
+//		var metaN = document.querySelector('meta[name="viewport"]');
+//		metaN.setAttribute('content','initial-scale=' + scale);
+		
+		//1px适配
+		
+//		var dpr = window.devicePixelRatio || 1;		
+//		var scale = 1/dpr;		
+//		var width = document.documentElement.clientWidth/16 * dpr;		
+//		var metaN = document.querySelector('meta[name="viewport"]');
+//		metaN.setAttribute('content','initial-scale=' + scale);				
+//		var styleN = document.createElement('style');
+//		styleN.innerHTML = 'html{font-size:'+ width +'px !important}';
+//		document.head.appendChild(styleN);
+		
+		
+		node.onmousedown = function(ev){
+			var ev = ev || event;
+			
+			node.setCapture && node.setCapture();
+			document.onmousemove = function(ev){
+				var ev = ev || event;
+				
+				
+			};
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				document.releaseCapture && document.releaseCapture();
+			}
+			return false;
+		}
+		
+		
+		
+	</script>
+</html>

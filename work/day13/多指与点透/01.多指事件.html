@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 250px;
+				height: 250px;
+				background: orange;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		var test = document.getElementById('test');
+		
+
+
+//		手指列表
+//			changedTouches:触发事件的手指列表
+//			targetTouches:元素身上的手指列表
+//			touches:屏幕上的手指列表
+		var callback = {
+			start:function(){
+				test.style.background = 'yellow';
+				
+			},
+			change:function(){
+				test.innerHTML += 'change<br/>';
+			},
+			end:function(){
+				test.innerHTML = '';
+			}
+			
+		};
+
+		gesTure(test,callback);
+		
+		function gesTure(node,callback){
+			var flag = false;
+			//gesturestart  手指触碰当前元素，屏幕上有两个或者两个以上的手指
+			node.addEventListener('touchstart',function(ev){
+				var touch = ev.touches;
+				if(touch.length >= 2){
+					flag = true;
+					if(callback&&callback['start']){
+						callback['start']();
+					};
+				};								
+			});
+			//gesturechange  手指触碰当前元素，屏幕上有两个或者两个以上的手指位置在发生移动
+			node.addEventListener('touchmove',function(ev){
+				var touch = ev.touches;
+				if(touch.length >= 2){
+					if(callback&&callback['change']){
+						callback['change']();
+					};
+				};								
+			});
+			//gestureend	在gesturestart后, 屏幕上只剩下两根以下（不包括两根）的手指
+			node.addEventListener('touchend',function(ev){
+				var touch = ev.touches;
+					if(flag){
+						if(touch.length < 2){
+							if(callback&&callback['end']){
+								callback['end']();
+							};
+						}
+						flag = false;
+					}
+					
+												
+			});
+			
+		}
+		
+		
+		
+	</script>
+</html>

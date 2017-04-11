@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="main" style="width: 1000px;height: 500px;">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/echarts.js">
+		
+	</script>
+	<!--
+		
+        标题组件：
+            负责显示整个图表的标题，在title中设置
+            show:标题是否显示
+            text：标题文字
+            subtext：子标题
+            left，top,right,bottom标题的位置
+            borderColor边框颜色
+            borderWidth边框宽度
+            
+     工具箱组件：toolbox
+        负责组件的工具栏
+        feature:具体显示的功能
+	        saveAsImage：保存图片
+	        restore：还原
+	        dataView:数据视图
+	        dataZoom:缩放视图
+	        magicType:动态数据切换     
+	        
+	弹窗组件：组件的工具栏 tooltip
+            show:是否显示
+            trigger:出发方式，axis就是X轴出发        
+            
+          标记线：markLine
+          标记点：markPoint
+            标记线的添加,在series中添加
+            最大值，平均值，最小值的标记线        
+    -->
+	
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例echarts.init()
+ 		//var myChart = echarts.init(document.getElementById('main'));
+
+		// 指定图表的配置项和数据
+        //var option = {}
+
+ 		// 使用刚指定的配置项和数据显示图表
+        //myChart.setOption(option);
+        
+        var myChart = echarts.init(document.getElementById('main'));
+        
+        var option = {
+        	//标题
+        	title:{
+        		
+        		text:'第一个直方图',
+        		subtext:'王波王皮',
+        		left:'left',
+        		borderColor:'yellowgreen',
+        		borderWidth:10
+        	},
+        	toolbox:{
+        		feature:{
+        			saveAsImage:{
+                    //show:true
+                },
+        			restore:{},
+        			dataView:{},
+        			dataZoom:{},
+        			magicType:{
+        				type:['line','bar']
+        			}
+        		}
+        	},
+        	//弹窗
+        	tooltip:{
+        		 trigger:'axis'
+        	},
+        	//图例
+        	legend:{
+        		data: [{
+    				name: '系列1',
+    			}]
+        	},
+        	//x轴
+        	xAxis:{
+        		data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        	},
+        	//y轴
+        	yAxis:{
+        		
+        	},
+        	//数据
+        	series:[
+        		{
+        			type:'line',
+        			name:'系列1',
+        			data:[10, 20, 36, 10, 15, 20,50],
+        			markLine:{
+	        			data:[
+			                    {type:'max',name:'最大值'},
+                   				 {type:'min',name:'最小值'},
+                   				 {type:'average',name:'平均值'}
+			                ]
+	        		},
+	        		markPoint:{
+	        			data:[
+			                   {type:'average',name:'平均值'}
+			                ]
+	        		}
+        		}       		        		
+        	]
+        	
+        };
+        
+        myChart.setOption(option);
+	</script>
+</html>

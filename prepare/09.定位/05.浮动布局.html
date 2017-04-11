@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			布局right与middle换位置
+			浮动
+			最小宽度
+			
+			如果有文字出现，布局就会错乱
+		-->
+		<!--
+			浮动能实现三列布局，但是，如果有文字出现，布局就会错乱
+			导致扩展性不好
+			
+			不推荐
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				/*
+				 * 当浏览器窗口减小，中间内容变没了，给body一个最小宽度
+				 * 2*left + right
+				 */
+				min-width: 600px;
+			}
+			div{
+				height: 200px;
+				background: pink;
+			}
+			#middle{
+				background: greenyellow;				
+			}
+			#left{
+				width: 200px;
+				float: left;
+			}
+			#right{
+				width: 200px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		
+		123
+		<div id="left">
+			left
+		</div>	
+		<div id="right">
+			right
+		</div>
+		<div id="middle">
+			middle
+		</div>
+	</body>
+</html>

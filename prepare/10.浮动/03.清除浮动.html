@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			overflow: hidden;
+				正常浏览器底下开启BFC
+				在ie7底下开启haslayout
+				在ie6底下不管用
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				width: 400px;
+				border: 1px solid;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#inner{
+				float: left;
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+</html>

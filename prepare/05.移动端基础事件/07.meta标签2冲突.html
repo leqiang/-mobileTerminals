@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=400,initial-scale=1.0"/>
+		<!--
+			当width和initial-scale产生冲突时，谁大听谁
+		
+		
+			什么时候布局视口会发生改变？
+				1.meta标签中的width被定义或修改了
+				2.用户旋转（横竖屏切换）
+				3.meta标签中的initial-scale被定义或修改了
+				4.页面中存在过大的元素时，布局视口所包含的css像素的个数本质没有发生改变
+									可是渲染时，会让布局视口尽量包住这个元素（不是完美视口）
+		-->
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 300px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			testtesttesttesttesttest
+		</div>
+		<!--
+			测试屏幕为375
+			width=device-width  正常显示
+			width=300      元素整屏出现
+			
+			initial-scale=1.0   与width=device-width  一样
+			
+			width=300,initial-scale=1.0     正常显示（initial-scale=1.0为375px）
+			width=400,initial-scale=1.0   屏幕宽度变为400
+			
+			谁大听谁
+		-->
+	</body>
+</html>

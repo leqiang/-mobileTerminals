@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			5.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				margin: 50px;
+			}
+			#wrap1{
+				background: brown;
+			}
+			#wrap2{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap1">
+			
+		</div>
+		<div id="" style="overflow: hidden;border: 1px solid;">
+			<div id="wrap2">
+			
+			</div>
+		</div>
+	</body>
+</html>

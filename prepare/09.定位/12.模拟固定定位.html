@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--使用绝对定位模拟固定定位-->
+		<!--
+			把滚动条作用在body上
+			让body尺寸与视口保持一致
+			
+			原理：因为我们滑动body身上的滚动条时，不会使初始包含块发生移动
+				滑动系统滚动条时，初始包含块会发生移动
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html{
+				height: 100%;
+				overflow: hidden;
+			}
+			body{
+				height: 100%;
+				overflow: scroll;
+			}
+			#test{
+				position: absolute;
+				left: 50px;
+				top: 50px;
+				width: 200px;
+				height: 200px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+		<div style="height: 2000px;">
+			
+		</div>
+	</body>
+</html>

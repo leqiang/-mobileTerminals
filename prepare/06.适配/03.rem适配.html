@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<title></title>
+		<!--
+			为什么要适配：
+				要实现等比！（如果屏幕是宽度320px,那么元素宽度为160px,占据就是一半，在各个设备上都是一样）
+				等比是实质：一个css像素在不同机型上，所包含是物理像素不同，实现等比
+			默认情况等不等比：
+				不加meta标签时是等比的
+			加了meta标签后：
+				不能等比了  一个css像素所占据的物理像素的个数确定了
+		-->
+		<!--
+			rem适配的本质：
+				rem参照根元素字体
+				不管视图多大，在不同机型上，1rem等于视图的宽度
+				所以，根标签的font-size改成布局视口的大小
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 0.5rem;
+				height: 0.5rem;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+//		var html = document.querySelector('html');
+//		html.style.fontSize = document.documentElement.clientWidth + 'px';
+
+		(function(){
+			var html = document.querySelector('html');
+			var width = document.documentElement.clientWidth;
+			html.style.fontSize = width + 'px';
+		})();
+		
+		
+		//业界推崇width/16,方便计算
+		
+		/*
+		 	问题：一个设计图750px,元素200px,转化成rem
+		 * 		200/750 * 16
+		 * 		把设计图想象成设备，200元素占多少份，有因为一份16，所以*16
+		 * 
+		 * 		或者   750/16 html字体大小，也就是一个rem占据多少px
+		 * 			有因为我们元素200px,所以200/( 750/16)
+		 * */
+	</script>
+</html>

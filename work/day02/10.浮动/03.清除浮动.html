@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			清除浮动：使浮动的子元素撑开父容器
+			
+			overflow: hidden;
+				标准浏览器：开启BFC
+				ie7:haslayout
+			
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{						
+				border: 1px solid;	
+				overflow: hidden;	
+				/*float: left;*/
+				/*position: absolute;*/
+				/*position: fixed;  ie6不支持*/
+			}
+			#inner{
+				width: 300px;
+				height: 300px;
+				background: yellowgreen;
+				float: left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			需求：
+				禁止wrap系统默认行为
+				inner中可以使用系统默认行为
+		-->
+		<div id="wrap">
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			<div id="inner">
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinnerinnerinnerinnerinner
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		
+		wrap.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		inner.addEventListener('touchstart',function(ev){
+			ev.stopPropagation();
+		});
+			
+		
+	</script>
+</html>
